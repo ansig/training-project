@@ -1,7 +1,9 @@
 // This is a declarative Jenkins pipeline script
 
 pipeline {
-    agent any
+    agent {
+        label 'java'
+    }
     stages {
         stage('Build') {
             steps {
