@@ -34,6 +34,10 @@ jib {
 	to {
 		image = "harbor.harbor/op-cicd-training/${project.name}"
 		tags = [project.version]
+		auth {
+			username = System.getenv('HARBOR_USER')
+			password = System.getenv('HARBOR_PASSWORD')
+		}
 	}
 	container {
 		ports = ['8080']
