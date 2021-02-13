@@ -43,4 +43,5 @@ jib {
 		ports = ['8080']
 		jvmFlags = []
 	}
+	allowInsecureRegistries = true
 }
