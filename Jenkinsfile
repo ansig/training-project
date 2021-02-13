@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Push') {
             steps {
-                sh ".gradlew jib"
+                sh "./gradlew jib"
             }
         }
     }
