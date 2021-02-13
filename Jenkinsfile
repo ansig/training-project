@@ -10,6 +10,11 @@ pipeline {
                 sh "./gradlew build"
             }
         }
+        stage('Push') {
+            steps {
+                sh ".gradlew jib"
+            }
+        }
     }
     post {
         cleanup {

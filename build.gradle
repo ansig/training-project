@@ -32,7 +32,7 @@ test {
 
 jib {
 	to {
-		image = "op-training/${project.name}"
+		image = "harbor.harbor/op-cicd-training/${project.name}"
 		tags = [project.version]
 	}
 	container {
