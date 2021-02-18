@@ -4,6 +4,9 @@ pipeline {
     agent {
         label 'java'
     }
+    options {
+        ansiColor('xterm')
+    }
     stages {
         stage('Build') {
             steps {
