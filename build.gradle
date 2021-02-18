@@ -32,7 +32,7 @@ test {
 
 jib {
 	to {
-		image = "harbor.harbor:80/op-cicd-training/${project.name}"
+		image = "harbor.harbor:4443/op-cicd-training/${project.name}"
 		tags = [project.version]
 		auth {
 			username = System.getenv('HARBOR_USER')
