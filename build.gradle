@@ -44,5 +44,4 @@ jib {
 		jvmFlags = []
 	}
 	allowInsecureRegistries = true
-	console = 'plain'
 }

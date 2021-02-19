@@ -19,7 +19,7 @@ pipeline {
             }
             steps {
                 withCredentials([usernamePassword(credentialsId: 'jenkins-harbor', passwordVariable: 'HARBOR_PASSWORD', usernameVariable: 'HARBOR_USER')]) {
-                    sh "./gradlew jib"
+                    sh "./gradlew jib -Djib.console='plain'"
                 }
             }
         }
