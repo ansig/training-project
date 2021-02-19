@@ -14,6 +14,9 @@ pipeline {
             }
         }
         stage('Push') {
+            when {
+                branch 'main'
+            }
             steps {
                 withCredentials([usernamePassword(credentialsId: 'jenkins-harbor', passwordVariable: 'HARBOR_PASSWORD', usernameVariable: 'HARBOR_USER')]) {
                     sh "./gradlew jib"
