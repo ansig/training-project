@@ -16,6 +16,14 @@ pipeline {
         ORG_GRADLE_PROJECT_buildVersion="${LocalDateTime.now(ZoneId.of('UTC')).format(DateTimeFormatter.ofPattern(/yyyyMMddHHmmss/))}"
     }
     stages {
+        stage('Prepare') {
+            steps {
+                script {
+                    def props = readProperties file: 'gradle.properties'
+                    currentBuild.description = "${props.baseVersion}-${env.ORG_GRADLE_PROJECT_buildVersion}"
+                }
+            }
+        }
         stage('Build') {
             steps {
                 sh "./gradlew build"
