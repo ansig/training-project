@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'se.omegapoint.training'
-version = '0.1-SNAPSHOT'
+version = "${baseVersion}-${buildVersion}"
 sourceCompatibility = '11'
 targetCompatibility = '11'
 
