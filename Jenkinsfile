@@ -13,7 +13,7 @@ pipeline {
         ansiColor('xterm')
     }
     environment {
-        ORG_GRADLE_PROJECT_buildVersion="${LocalDateTime.now(ZoneId.of('UTC')).format(DateTimeFormatter.ofPattern(/yyyyMMddHHmmss/))}"
+        ORG_GRADLE_PROJECT_buildVersion="${LocalDateTime.now(ZoneId.of('UTC')).format(DateTimeFormatter.ofPattern(/yyyyMMdd-HHmmss/))}"
     }
     stages {
         stage('Prepare') {
