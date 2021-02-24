@@ -31,7 +31,7 @@ pipeline {
         }
         stage('Push') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'jenkins-harbor', passwordVariable: 'HARBOR_PASSWORD', usernameVariable: 'HARBOR_USER')]) {
+                withCredentials([usernamePassword(credentialsId: 'jenkins-ecr', passwordVariable: 'ECR_PASSWORD', usernameVariable: 'ECR_USER')]) {
                     sh "./gradlew jib -Djib.console='plain'"
                 }
             }

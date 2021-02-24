@@ -41,16 +41,15 @@ test {
 
 jib {
 	to {
-		image = "harbor.harbor/op-cicd-training/${project.name}"
+		image = "444365662172.dkr.ecr.eu-north-1.amazonaws.com/op-cicd-training/project-one"
 		tags = [project.version]
 		auth {
-			username = System.getenv('HARBOR_USER')
-			password = System.getenv('HARBOR_PASSWORD')
+			username = System.getenv('ECR_USER')
+			password = System.getenv('ECR_PASSWORD')
 		}
 	}
 	container {
 		ports = ['8080']
 		jvmFlags = []
 	}
-	allowInsecureRegistries = true
 }
